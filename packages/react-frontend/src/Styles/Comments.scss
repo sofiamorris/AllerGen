@@ -1,0 +1,113 @@
+.comments {
+    margin-top: 24px;
+  }
+  
+  .comment {
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .comment-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .comment-author {
+    font-weight: 600;
+  }
+  
+  .comment-time {
+    color: #777;
+    font-size: 13px;
+  }
+  
+  .comment-text {
+    font-size: 15px;
+  }
+
+  .comment-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .comment-delete-btn {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: #b00020;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .comment-form {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 16px;
+  }
+
+  .comment-form-label {
+    align-items: left;
+  }
+  
+  .comment-form input,
+  .comment-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .comment-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .comment-form button {
+    margin-top: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .star-picker {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .star {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    padding: 0;
+  }
+  
+  .star:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .star-label {
+    margin-left: 8px;
+    font-size: 0.9rem;
+    opacity: 0.75;
+  }
+
+  .star-comments {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    padding: 0;
+    color: black;
+  }
+
+  

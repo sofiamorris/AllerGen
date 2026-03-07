@@ -1,0 +1,22 @@
+html, container, body, #root {
+height: 100%;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+
+.welcome-page {
+height: 100vh;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+
+.welcome-logo {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}

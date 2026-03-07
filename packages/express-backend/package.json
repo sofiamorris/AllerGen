@@ -1,0 +1,23 @@
+{
+  "name": "express-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon backend.js",
+    "start": "node backend.js"
+  },
+  "author": "Sofia Morris",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.19.2",
+    "multer": "^2.0.2",
+    "openai": "^6.7.0"
+  }
+}

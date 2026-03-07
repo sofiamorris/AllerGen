@@ -1,0 +1,28 @@
+.navbar-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: #ffe344;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+  }
+  
+  .nav-item.active {
+    color: #ff5b20;
+    font-weight: 600;
+  }
+  

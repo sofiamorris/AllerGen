@@ -1,0 +1,312 @@
+[
+    {
+      "_id": "rule.dairyfree.milk",
+      "target": { "by": "ingredient", "value": "milk" },
+      "role": "liquid",
+      "diets": ["Dairy-Free", "Vegan"],
+      "candidates": [
+        { "label": "Oat milk"},
+        { "label": "Soy milk"},
+        { "label": "Coconut milk"},
+        { "label": "Almond milk"}
+      ],
+      "avoidIfAllergens": {
+        "Nut-Free": ["Almond milk"],
+        "Soy-Free": ["Soy milk"]
+      }
+    },
+    {
+      "_id": "rule.dairyfree.butter",
+      "target": { "by": "ingredient", "value": "butter" },
+      "role": "fat",
+      "diets": ["Dairy-Free", "Vegan"],
+      "candidates": [
+        { "label": "Olive oil"},
+        { "label": "Avocado oil"},
+        { "label": "Coconut oil"},
+        { "label": "Vegan butter"},
+        { "label": "Canola oil"}
+      ],
+      "avoidIfAllergens": {
+        "Nut-Free": ["Coconut oil"]
+      }
+    },
+    {
+      "_id": "rule.dairyfree.cream",
+      "target": { "by": "ingredient", "value": "cream" },
+      "role": "fat/liquid",
+      "diets": ["Dairy-Free", "Vegan"],
+      "candidates": [
+        { "label": "Coconut cream"},
+        { "label": "Oat cream"},
+        { "label": "Cashew cream"}
+      ],
+      "avoidIfAllergens": {
+        "Nut-Free": ["Cashew cream"]
+      }
+    },
+    {
+      "_id": "rule.dairyfree.cheese",
+      "target": { "by": "tag", "value": "cheese" },
+      "role": "umami/fat",
+      "diets": ["Vegan", "Dairy-Free"],
+      "candidates": [
+        { "label": "Nutritional yeast"},
+        { "label": "Plant-based cheese"},
+        { "label": "Tofu ricotta"}
+      ],
+      "avoidIfAllergens": {
+        "Soy-Free": ["Tofu ricotta"]
+      }
+    },
+    {
+        "_id": "rule.dairyfree.yogurt",
+        "target": { "by": "ingredient", "value": "yogurt" },
+        "role": "moisture / tang / creaminess",
+        "diets": ["Dairy-Free", "Vegan"],
+        "candidates": [
+            { "label": "Coconut yogurt" },
+            { "label": "Soy yogurt" },
+            { "label": "Oat yogurt" },
+            { "label": "Almond yogurt" },
+            { "label": "Cashew yogurt" },
+            { "label": "Silken tofu" }
+        ],
+        "avoidIfAllergens": {
+            "Nut-Free": ["Almond yogurt", "Cashew yogurt"],
+            "Soy-Free": ["Soy yogurt", "Silken tofu"]
+        }
+    },      
+    {
+        "_id": "rule.vegan.meat",
+        "target": { "by": "tag", "value": "meat" },
+        "role": "protein / savory base",
+        "diets": ["Vegan", "Vegetarian", "Pescatarian"],
+        "candidates": [
+            { "label": "Tempeh" },
+            { "label": "Tofu" },
+            { "label": "Seitan" },
+            { "label": "Lentils" },
+            { "label": "Chickpeas" },
+            { "label": "Jackfruit" },
+            { "label": "Mushrooms" },
+            { "label": "Plant-based meat" }
+        ],
+        "avoidIfAllergens": {
+            "Soy-Free": ["Tofu", "Tempeh"],
+            "Gluten-Free": ["Seitan"]
+        }
+    },
+    {
+        "_id": "rule.vegan.chicken",
+        "target": { "by": "ingredient", "value": "chicken" },
+        "role": "protein / texture",
+        "diets": ["Vegan", "Vegetarian", "Halal", "Kosher", "Pescatarian"],
+        "candidates": [
+            { "label": "Tofu" },
+            { "label": "Tempeh" },
+            { "label": "Seitan" },
+            { "label": "Jackfruit" },
+            { "label": "Chickpeas" },
+            { "label": "Mushrooms" },
+            { "label": "Plant-based chicken" }
+        ],
+        "avoidIfAllergens": {
+            "Soy-Free": ["Tofu", "Tempeh"],
+            "Gluten-Free": ["Seitan"]
+        }
+    },    
+    {
+        "_id": "rule.pescatarian.chicken",
+        "target": { "by": "ingredient", "value": "chicken" },
+        "role": "protein / texture",
+        "diets": ["Pescatarian"],
+        "candidates": [
+          { "label": "White fish fillet" },
+          { "label": "Salmon chunks" },
+          { "label": "Tuna" },
+          { "label": "Shrimp" },
+          { "label": "Prawns" },
+          { "label": "Scallops" },
+          { "label": "Crab/Imitation crab" },
+          { "label": "Tofu" },
+          { "label": "Tempeh" },
+          { "label": "Mushrooms" }
+        ],
+        "avoidIfAllergens": {
+          "Shellfish-Free": ["Shrimp", "Prawns", "Scallops", "Crab/Imitation crab"],
+          "Soy-Free": ["Tofu", "Tempeh"]
+        }
+    },                 
+    {
+      "_id": "rule.eggfree.egg",
+      "target": { "by": "ingredient", "value": "egg" },
+      "role": "binder",
+      "diets": ["Vegan", "Egg-Free"],
+      "candidates": [
+        { "label": "Flax egg"},
+        { "label": "Chia egg"},
+        { "label": "Applesauce"},
+        { "label": "Silken tofu"},
+        {"label": "Aquafaba"},
+        {"label": "Commercial egg replacer"}
+      ],
+      "avoidIfAllergens": {
+        "Soy-Free": ["Silken tofu"]
+      }
+    },
+    {
+      "_id": "rule.glutenfree.flour",
+      "target": { "by": "ingredient", "value": "wheat flour" },
+      "role": "base",
+      "diets": ["Gluten-Free", "Keto", "Paleo"],
+      "candidates": [
+        { "label": "1:1 Gluten-Free flour blend"},
+        { "label": "Rice flour"},
+        { "label": "Oat flour"},
+        { "label": "Almond flour"},
+        { "label": "Coconut flour"},
+        { "label": "Potato Flour"}
+      ],
+      "avoidIfAllergens": {
+        "Nut-Free": ["Almond flour", "Coconut flour"]
+      }
+    },
+    {
+      "_id": "rule.glutenfree.soy_sauce",
+      "target": { "by": "ingredient", "value": "soy sauce" },
+      "role": "seasoning",
+      "diets": ["Gluten-Free", "Soy-Free"],
+      "candidates": [
+        { "label": "Tamari"},
+        { "label": "Coconut aminos"}
+      ],
+      "avoidIfAllergens": {
+        "Soy-Free": ["Tamari"]
+      }
+    },
+    {
+        "_id": "rule.glutenfree.breadcrumbs",
+        "target": { "by": "ingredient", "value": "breadcrumbs" },
+        "role": "binder / coating / texture",
+        "diets": ["Gluten-Free", "Keto", "Paleo", "Vegan"],
+        "candidates": [
+          { "label": "Gluten-free breadcrumbs" },
+          { "label": "Crushed rice crackers" },
+          { "label": "Crushed cornflakes" },
+          { "label": "Ground oats" },
+          { "label": "Crushed nuts or seeds" },
+          { "label": "Pork rinds" },
+          { "label": "Coconut flakes" },
+          { "label": "Almond meal" },
+          { "label": "Quinoa flakes" }
+        ],
+        "avoidIfAllergens": {
+          "Nut-Free": ["Crushed nuts or seeds", "Almond meal"],
+          "Grain-Free": ["Ground oats", "Crushed rice crackers", "Crushed cornflakes"],
+          "Vegan": ["Pork rinds"]
+        }
+    },
+    {
+      "_id": "rule.vegan.honey",
+      "target": { "by": "ingredient", "value": "honey" },
+      "role": "sweetener",
+      "diets": ["Vegan"],
+      "candidates": [
+        { "label": "Maple syrup"},
+        { "label": "Agave nectar"},
+        { "label": "Date syrup"}
+      ]
+    },
+    {
+      "_id": "rule.fishfree.fish_sauce",
+      "target": { "by": "ingredient", "value": "fish sauce" },
+      "role": "umami/seasoning",
+      "diets": ["Vegan", "Fish-Free", "Shellfish-Free", "Halal"],
+      "candidates": [
+        { "label": "Vegan fish sauce"},
+        { "label": "Mushroom soy sauce"},
+        { "label": "Coconut aminos + seaweed"}
+      ],
+      "avoidIfAllergens": {
+        "Soy-Free": ["Mushroom soy sauce"]
+      }
+    },
+    {
+      "_id": "rule.keto.sugar",
+      "target": { "by": "ingredient", "value": "sugar" },
+      "role": "sweetener",
+      "diets": ["Keto", "Low-Carb"],
+      "candidates": [
+        { "label": "Erythritol"},
+        { "label": "Allulose"},
+        { "label": "Stevia"},
+        { "label": "Monk Fruit" }
+      ]
+    },
+    {
+        "_id": "rule.keto.flour",
+        "target": { "by": "ingredient", "value": "wheat flour" },
+        "role": "base / structure",
+        "diets": ["Keto", "Low-Carb"],
+        "candidates": [
+          { "label": "Almond flour" },
+          { "label": "Coconut flour" },
+          { "label": "Flaxseed meal" }
+        ],
+        "avoidIfAllergens": { "Nut-Free": ["Almond flour"], "Coconut-Free": ["Coconut flour"] }
+    },      
+    {
+      "_id": "rule.halal.bacon",
+      "target": { "by": "ingredient", "value": "bacon" },
+      "role": "flavoring",
+      "diets": ["Halal", "Kosher"],
+      "candidates": [
+        { "label": "Beef bacon"},
+        { "label": "Turkey bacon"},
+        { "label": "Mushrooms"}
+      ]
+    },
+    {
+        "_id": "rule.vegan.fish",
+        "target": { "by": "tag", "value": "fish" },
+        "role": "protein / texture / umami",
+        "diets": ["Vegan", "Vegetarian", "Fish-Free", "Kosher"],
+        "candidates": [
+        { "label": "Banana blossom" },
+        { "label": "Hearts of palm" },
+        { "label": "Tofu" },
+        { "label": "Tempeh" },
+        { "label": "Jackfruit" },
+        { "label": "King oyster mushrooms" },
+        { "label": "Oyster mushrooms" },
+        { "label": "Chickpeas" },
+        { "label": "Nori or seaweed flakes" },
+        { "label": "Plant-based fish fillets" }
+        ],
+        "avoidIfAllergens": {
+        "Soy-Free": ["Tofu", "Tempeh"]
+        }
+    },
+    {
+        "_id": "rule.vegan.shellfish",
+        "target": { "by": "tag", "value": "shellfish" },
+        "role": "protein / texture / briny flavor",
+        "diets": ["Vegan", "Vegetarian", "Shellfish-Free", "Kosher"],
+        "candidates": [
+        { "label": "Hearts of palm" },
+        { "label": "Artichoke hearts" },
+        { "label": "King oyster mushrooms" },
+        { "label": "Oyster mushrooms" },
+        { "label": "Jackfruit" },
+        { "label": "Konjac-based vegan shrimp" },
+        { "label": "Palmini (palm hearts noodles)" },
+        { "label": "Plant-based shrimp/scallops" },
+        { "label": "Nori or dulse flakes" },
+        { "label": "Vegan crabcakes"}
+        ],
+        "avoidIfAllergens": {}
+    }
+      
+  ]
+  
