@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import "../Styles/WelcomePage.scss";
-import logo from "../Assets/logo.png";
+import logo from "../assets/logo.png";
 
 const WelcomePage = () => {
     const navigate = useNavigate();
   
     useEffect(() => {
         const timer = setTimeout(() => {
-          navigate("/gallery"); // direct to preferences after 3 seconds
+          navigate("/login"); // direct to preferences after 3 seconds
         }, 3000);
     
         // cleanup if user leaves early
