@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 import Account from "./Components/Account.jsx";
-import MyRecipesList from "./Components/SavedRecipes.jsx";
 import NewRecipe from "./Components/NewRecipe.jsx";
 import Preferences from "./Components/Preferences.jsx";
 import HomeGallery from "./Components/HomeGallery.jsx";

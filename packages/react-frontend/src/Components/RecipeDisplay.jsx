@@ -282,13 +282,12 @@ const RecipeDisplay = () => {
                 </button>
               </>
             )}
-
-            <StarsAvg avg={avg}/>
           </div>
         </header>
 
         {isMine ? (
           <div className="publish-row">
+            <StarsAvg avg={avg}/>
             <button
               className={`publish-btn ${recipe.published ? "selected" : ""}`}
               type="button"
@@ -299,6 +298,7 @@ const RecipeDisplay = () => {
           </div>
         ) : canLike ? (
           <div className="publish-row">
+            <StarsAvg avg={avg}/>
             <button
               className={`publish-btn ${liked ? "selected" : ""}`}
               type="button"

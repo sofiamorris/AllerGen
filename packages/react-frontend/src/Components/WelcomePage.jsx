@@ -8,7 +8,7 @@ const WelcomePage = () => {
   
     useEffect(() => {
         const timer = setTimeout(() => {
-          navigate("/login"); // direct to preferences after 3 seconds
+          navigate("/gallery"); // direct to preferences after 3 seconds
         }, 3000);
     
         // cleanup if user leaves early

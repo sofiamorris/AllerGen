@@ -18,6 +18,7 @@ html, body, #root {
   height: 100vh;
   background-color: rgb(255, 255, 255);
   padding-top: calc(env(safe-area-inset-top) + 12px);
+  padding-bottom: 85px;
 }
 
 .preference-row {
@@ -29,7 +30,7 @@ html, body, #root {
 .start_here {
   font-size: 26px;
   font-weight: bold;
-  padding-top: 2vh;
+  padding-top: 4vh;
 }
 
 .input_title{
