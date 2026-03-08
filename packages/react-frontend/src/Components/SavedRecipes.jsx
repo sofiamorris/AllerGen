@@ -151,7 +151,7 @@ const SavedRecipes = () => {
       <header className="saved-recipes-header">Saved Recipes</header>
 
       <Card
-        className="filter-card"
+        className="filter"
         onClick={() => setPickFilter(true)}
         style={{ cursor: "pointer" }}
       >

@@ -17,27 +17,28 @@ html, body {
     padding-bottom: 85px;
     position: sticky;
     padding-top: calc(env(safe-area-inset-top) + 12px);
+    top: 0;
   }
   
-/* row 1: buttons */
 .top-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;                      /* don't use 30vw here */
+  gap: 12px;
 }
 
 .filter-card,
 .new-recipe-card {
-  position: static;
+  height: 44px;
+  width: auto;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter-card {
   margin: 0;
-  height: 5vh;
-  width: 25vw;
-  display: flex;
-  justify-content: center;
   border-radius: 10px;
   background-color: rgb(255, 199, 70);
   border: 2px solid rgb(0, 0, 0);
@@ -45,10 +46,6 @@ html, body {
 
 .new-recipe-card {
   margin: 0;
-  height: 5vh;
-  width: 40vw;
-  display: flex;
-  justify-content: center;
   border-radius: 10px;
   background-color: #ffe867;
   border: 2px solid rgb(255, 216, 75);
