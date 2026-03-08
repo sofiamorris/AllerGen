@@ -1,6 +1,6 @@
 // routes/recipes.js
 import express from "express";
-import Recipe from "../models/Recipe.js";
+import Recipe from "../models/recipe.js";
 import multer from "multer";
 import mongoose from "mongoose";
 

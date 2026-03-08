@@ -2,7 +2,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import Comment from "../models/Comment.js";
-import Recipe from "../models/Recipe.js";
+import Recipe from "../models/recipe.js";
 
 const router = express.Router();
 
