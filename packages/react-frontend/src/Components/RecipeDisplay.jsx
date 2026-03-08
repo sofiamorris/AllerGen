@@ -249,7 +249,7 @@ const RecipeDisplay = () => {
 
             <div className="top-row">
               <button
-                className="back-btn"
+                className="back-button"
                 onClick={() => {
                   if (window.history.length > 1) navigate(-1);
                   else navigate("/");

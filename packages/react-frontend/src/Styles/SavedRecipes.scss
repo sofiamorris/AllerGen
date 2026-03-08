@@ -20,6 +20,7 @@ html, body {
     padding-top: 2vh;
     font-size: 25px;
     z-index: 10;
+    padding-top: calc(env(safe-area-inset-top) + 12px);
 }
 
 .recipe-list {

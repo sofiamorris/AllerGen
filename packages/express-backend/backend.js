@@ -21,12 +21,32 @@ const app = express();
 const client = new OpenAI({apiKey: process.env.OPENAI_API_KEY});
 const upload = multer({ storage: multer.memoryStorage() });
 
+const allowedOrigins = (process.env.CORS_ORIGIN || "http://localhost:5173")
+  .split(",")
+  .map(s => s.trim())
+  .filter(Boolean);
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN?.split(",") || ["http://localhost:5173"],
+  origin: (origin, cb) => {
+    // allow no-origin requests (curl, Postman, Render health checks)
+    if (!origin) return cb(null, true);
+
+    if (allowedOrigins.includes(origin)) return cb(null, true);
+
+    return cb(new Error(`CORS blocked for origin: ${origin}`));
+  },
   credentials: true,
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "x-user-email"],
 }));
+
+// ensure OPTIONS preflight always gets handled
+// app.options("*", cors());
+
+app.use((req, _res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+});
 
 app.use(express.json());
 
@@ -40,12 +60,6 @@ app.use("/api/recipes", recipesRouter);
 app.use("/api", commentsRouter);
 app.use("/api", likesRouter);
 
-app.use((req, _res, next) => {
-  const email = (req.header("x-user-email") || "").trim().toLowerCase();
-  req.userEmail = email || null;
-  next();
-});
-
 app.listen(process.env.PORT, () => {
   console.log("REST API is listening.");
 });
@@ -53,11 +67,6 @@ app.listen(process.env.PORT, () => {
 //default route
 app.get("/", (req, res) => {
   res.status(200).send({ message: "Welcome to AllerGen!" });
-});
-
-app.use((req, _res, next) => {
-  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
-  next();
 });
 
 app.post("/api/recipes/generate", upload.single("file"), async (req, res) => {

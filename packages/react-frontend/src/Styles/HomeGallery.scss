@@ -16,6 +16,7 @@ html, body {
     background-color: rgb(255, 255, 255);
     padding-bottom: 85px;
     position: sticky;
+    padding-top: calc(env(safe-area-inset-top) + 12px);
   }
   
 /* row 1: buttons */

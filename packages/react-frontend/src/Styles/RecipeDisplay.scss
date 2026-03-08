@@ -47,6 +47,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding-top: calc(env(safe-area-inset-top) + 12px);
   }
 
 .top-row {
@@ -55,12 +56,13 @@
     align-items: center;
 }
 
-.back-btn {
+.back-button {
     position: absolute;             
     top: 0;
     left: 1rem;
-    background-color: rgba(255, 255, 255, 0);
     display: flex;
+    background-color: transparent;
+    border: transparent;
     color: white !important;
 }
 
