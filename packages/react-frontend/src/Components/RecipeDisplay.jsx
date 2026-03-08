@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import "../Styles/RecipeDisplay.scss";
-import CommentList from "../components/CommentList";
-import CommentForm from "../components/CommentForm";
+import CommentList from "../Components/CommentList";
+import CommentForm from "../Components/CommentForm";
 
 const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5432";
 
