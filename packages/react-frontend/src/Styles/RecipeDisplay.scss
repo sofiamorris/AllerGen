@@ -57,10 +57,10 @@
 }
 
 .back-button {
-    position: absolute;             
-    top: 0;
+    position: fixed;
+    top: calc(env(safe-area-inset-top) + 8px);
     left: 1rem;
-    display: flex;
+    z-index: 2000;
     background-color: transparent;
     border: transparent;
     color: white !important;
