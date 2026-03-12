@@ -20,6 +20,8 @@ const NewRecipe = () => {
     const [showCategoryModal, setShowCategoryModal] = useState(false);
     const [category, setCategory] = useState("Dinner");
 
+    const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5432";
+
     const categories = [
       "Breakfast",
       "Lunch",
@@ -78,7 +80,7 @@ const NewRecipe = () => {
         form.append("diet", JSON.stringify(state?.diet ?? []));
         form.append("file", state?.selectedFile ?? "");
 
-        const res = await fetch("http://localhost:5432/api/recipes/generate", {
+        const res = await fetch(`${API_BASE}/api/recipes/generate`, {
           method: "POST",
           body: form,
         });
@@ -89,7 +91,7 @@ const NewRecipe = () => {
         }
 
         const data = await res.json();
-        setRawText(data.rawText || "");
+        setRawText(data.resultText || "");
         setTitle(data.title || "");
         setIngredientsList(Array.isArray(data.ingredientsList) ? data.ingredientsList : []);
         setInstructionsList(Array.isArray(data.instructionsList) ? data.instructionsList : []);
@@ -168,7 +170,7 @@ const NewRecipe = () => {
         category,
       };
     
-      const res = await fetch("http://localhost:5432/api/recipes", {
+      const res = await fetch(`${API_BASE}/api/recipes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
