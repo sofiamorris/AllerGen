@@ -22,62 +22,80 @@
     background-color: rgb(255, 255, 255);
 }
 
-.header-overlay {
-    position: absolute;
-    inset: 0;
-  
-    padding: calc(env(safe-area-inset-top) + 12px) 16px 16px;
-  
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 12px;
-  
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.25),
-      rgba(0, 0, 0, 0.6)
-    );
-  }
-
 .recipe-header {
     position: relative;
-    height: 60vh;
     width: 100%;
-    background-color: rgb(255, 167, 43);
+    height: auto;
+    min-height: 220px;
+    overflow: hidden;
+  }
+  
+.recipe-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--header-bg, none);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: calc(env(safe-area-inset-top) + 12px);
-  }
+    z-index: 0;
+}
+  
+.recipe-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.25),
+      rgba(0,0,0,0.6)
+    );
+    z-index: 1;
+}
+  
+.header-overlay {
+    position: relative;
+    z-index: 2;
+    background: none;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --controls-h: 48px;
+    padding: calc(var(--safe-top) + 12px + var(--controls-h)) 16px 16px;
+}
 
-  .top-row {
+.top-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
   
+.back-button,
+.upload-img-btn {
+  position: absolute;
+  top: calc(env(safe-area-inset-top, 0px) + 10px);
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  z-index: 2;
+}
+
 .back-button {
-    position: static;
-    background: transparent;
-    border: 0;
-    color: white !important;
-    padding: 6px 10px;
+  left: 12px;
+  background: transparent;
+  border: 0;
+  color: white !important;
+  padding: 0 10px;
 }
 
 .upload-img-btn {
-    position: static;
-    height: 40px;
-    width: auto;
-    padding: 0 12px !important;
-    border-radius: 10px;
-    background-color: rgb(255, 222, 105);
-    border: 2px solid rgb(255, 200, 37);
-    color: #000;
-}
-
-.upload-img-btn:hover {
-    background: #eaeaea;
+  right: 12px;
+  width: auto;
+  padding: 0 12px !important;
+  background-color: rgb(255, 222, 105);
+  border: 2px solid rgb(255, 200, 37);
+  color: #000;
 }
 
 .publish-row {
@@ -125,8 +143,9 @@
     color: white;
     text-align: left;
     line-height: 1.05;
-    padding-right: 6px;
-    max-width: 80%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
   }
 
 .header-2 {

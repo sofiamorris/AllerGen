@@ -238,11 +238,9 @@ const RecipeDisplay = () => {
 
   return (
     <div className="recipe-display">
-      <header
+        <header
           className="recipe-header"
-          style={{
-            backgroundImage: recipe.image ? `url(${recipe.image})` : "none",
-          }}
+          style={{ "--header-bg": recipe.image ? `url(${recipe.image})` : "none" }}
         >
           {/* Overlay controls */}
           <div className="header-overlay">
@@ -298,7 +296,7 @@ const RecipeDisplay = () => {
           </div>
         ) : canLike ? (
           <div className="publish-row">
-            <StarsAvg avg={avg}/>
+                  <StarsAvg avg={avg}/>
             <button
               className={`publish-btn ${liked ? "selected" : ""}`}
               type="button"
