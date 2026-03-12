@@ -20,24 +20,25 @@
     width: 100%;
     height: 100vh;
     background-color: rgb(255, 255, 255);
-    padding-bottom: calc(var(--nav-h) + var(--safe-b));
 }
 
 .header-overlay {
     position: absolute;
     inset: 0;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
+  
+    padding: calc(env(safe-area-inset-top) + 12px) 16px 16px;
+  
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 12px;
+  
     background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.45),
-        rgba(0, 0, 0, 0.25),
-        rgba(0, 0, 0, 0.6)
+      to bottom,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.6)
     );
-}
+  }
 
 .recipe-header {
     position: relative;
@@ -50,20 +51,33 @@
     padding-top: calc(env(safe-area-inset-top) + 12px);
   }
 
-.top-row {
+  .top-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  
+.back-button {
+    position: static;
+    background: transparent;
+    border: 0;
+    color: white !important;
+    padding: 6px 10px;
 }
 
-.back-button {
-    position: fixed;
-    top: calc(env(safe-area-inset-top) + 8px);
-    left: 1rem;
-    z-index: 2000;
-    background-color: transparent;
-    border: transparent;
-    color: white !important;
+.upload-img-btn {
+    position: static;
+    height: 40px;
+    width: auto;
+    padding: 0 12px !important;
+    border-radius: 10px;
+    background-color: rgb(255, 222, 105);
+    border: 2px solid rgb(255, 200, 37);
+    color: #000;
+}
+
+.upload-img-btn:hover {
+    background: #eaeaea;
 }
 
 .publish-row {
@@ -107,9 +121,13 @@
 }
 
 .recipe-title {
+    margin: 0;
     color: white;
     text-align: left;
-}
+    line-height: 1.05;
+    padding-right: 6px;
+    max-width: 80%;
+  }
 
 .header-2 {
     color: black;
@@ -133,24 +151,3 @@
     overflow-y: auto;
     width: 100%;
   }
-
-.upload-img-btn {
-    position: absolute;             
-    top: 1rem;                      
-    right: 1rem;                  
-    height: 4vh;
-    width: 28vw;   
-    padding: 0 !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: rgb(255, 222, 105);
-    border: 2px solid rgb(255, 200, 37);
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-}
-
-.upload-img-btn:hover {
-    background: #eaeaea;
-}
